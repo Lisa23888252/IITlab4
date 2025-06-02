@@ -7,6 +7,25 @@
 </head>
 <body>
     <p>ІА-з21 Пасіченко Єлизавета</p>
-    <p>Дата: 16.04.2025</p>
+    <p id="datetime">Дата: завантаження...</p>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const formatted = now.toLocaleString('uk-UA', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('datetime').textContent = 'Дата: ' + formatted;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
 </body>
 </html>
+
